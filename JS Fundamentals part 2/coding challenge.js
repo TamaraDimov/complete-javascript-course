@@ -72,31 +72,59 @@
 
 /* Write your code below. Good luck! 🙂 */
 
-let mark = {
-  fullName: 'Mark',
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
+// let mark = {
+//   fullName: 'Mark',
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+
+// let john = {
+//   fullName: 'John',
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.bmi = this.mass / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+
+// mark.calcBMI();
+// john.calcBMI();
+
+// if (mark.bmi > john.bmi) {
+//   console.log(`Mark's BMI ${mark.bmi} is higher than John's BMI ${john.bmi}`);
+// } else {
+//   console.log(`John's BMI ${john.bmi} is higher than Mark's BMI ${mark.bmi}`);
+// }
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 };
 
-let john = {
-  fullName: 'John',
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.bmi = this.mass / (this.height * this.height);
-    return this.bmi;
-  },
-};
+/* Write your code below. Good luck! 🙂 */
 
-mark.calcBMI();
-john.calcBMI();
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
 
-if (mark.bmi > john.bmi) {
-  console.log(`Mark's BMI ${mark.bmi} is higher than John's BMI ${john.bmi}`);
-} else {
-  console.log(`John's BMI ${john.bmi} is higher than Mark's BMI ${mark.bmi}`);
+for (let i = 0; i < bills.length; i++) {
+  let tip = calcTip(bills[i]);
+  tips.push(tip);
+  totals.push(tip + bills[i]);
 }
+
+console.log(bills, tips, totals);
+
+let calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i]; //sum +=arr[i]
+  }
+  return sum / arr.length;
+};
+console.log(calcAverage([2, 3, 6]));
+
+console.log(calcAverage(totals));
